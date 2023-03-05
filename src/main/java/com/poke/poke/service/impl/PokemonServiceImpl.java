@@ -4,23 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.poke.poke.pojo.Pokemon;
+import com.poke.poke.repository.PokemonRepository;
 import com.poke.poke.service.PokemonService;
 
 @Service
 public class PokemonServiceImpl implements PokemonService{
 
+    private static final String Optionnal = null;
+    @Autowired
+    private PokemonRepository pokemonRepository;
 
     @Override
     public List<Pokemon> getAllPokemon() {
-        return maListe;
+        return pokemonRepository.findAll();
     }
 
     @Override
-    public List<Pokemon> getAllPokemonByName(String name) {
-        return maListe.stream().filter(pokemon -> pokemon.getSurname().equals(name)).collect(Collectors.toList());
+    public Pokemon getPokemonById(Long id) {
+        Optional<Pokemon> pokemonOptional = pokemonRepository.findById(id);
+        return pokemonOptional.orElse(null);
     }
 
     @Override

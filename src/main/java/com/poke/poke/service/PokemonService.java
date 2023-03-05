@@ -8,7 +8,7 @@ public interface PokemonService {
     
     List<Pokemon> getAllPokemon();
 
-    List<Pokemon> getAllPokemonByName(String name);
+    Pokemon getPokemonById(Long id);
 
     void updatePokemon(String pokemonName, Pokemon pokemon);
 
