@@ -12,7 +12,6 @@ import com.poke.poke.service.PokemonService;
 @Service
 public class PokemonServiceImpl implements PokemonService{
 
-    private static List<Pokemon> maListe = new ArrayList<>();
 
     @Override
     public List<Pokemon> getAllPokemon() {
