@@ -20,6 +20,11 @@ public class Pokemon {
     @OneToMany
     private List<Capacite> capacitesList;
 
+    public Pokemon(String surname, List<Capacite> capacitesList) {
+        this.surname = surname;
+        this.capacitesList = capacitesList;
+    }
+    
 
     public Pokemon(Long id, String surname, List<Capacite> capacitesList) {
         this.id = id;

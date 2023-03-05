@@ -9,6 +9,20 @@ public class Capacite {
     private Long puissance;
 
 
+
+    public Capacite(Long id, String libelle, Long puissance) {
+        this.id = id;
+        this.libelle = libelle;
+        this.puissance = puissance;
+    }
+
+    public Capacite(String libelle, Long puissance) {
+        this.libelle = libelle;
+        this.puissance = puissance;
+    }
+
+
+
     public Long getId() {
         return this.id;
     }
