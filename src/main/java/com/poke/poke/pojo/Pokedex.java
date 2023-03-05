@@ -2,10 +2,26 @@ package com.poke.poke.pojo;
 
 import java.util.List;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Pokedex")
 public class Pokedex {
     
+    @Id
+    @SequenceGenerator(name = "pokedex_seq", sequenceName = "pokedex_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pokedex_seq")
+    @Column(name =  "pokedex_id", updatable = false)
     private Long id;
 
+    @Column(name = "region")
     private String region; 
 
     private List<Pokemon> pokemonList;
@@ -23,6 +39,9 @@ public class Pokedex {
         this.pokemonList = pokemonList;
     }
 
+    public Pokedex(){
+
+    }
 
     public String getRegion() {
         return this.region;
