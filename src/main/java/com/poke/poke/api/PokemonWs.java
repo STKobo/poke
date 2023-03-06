@@ -28,7 +28,7 @@ public class PokemonWs {
     }
 
     @GetMapping("{id}")
-    public List<Pokemon> getPokemonById(@PathVariable(name = "id") Long id){
+    public Pokemon getPokemonById(@PathVariable(name = "id") Long id){
         return service.getPokemonById(id);
     }
 
