@@ -27,9 +27,9 @@ public class PokemonWs {
         return service.getAllPokemon();
     }
 
-    @GetMapping("{name}")
-    public List<Pokemon> getAllPokemonByName(@PathVariable(name = "name")){
-        return service.getAllPokemon(nom);
+    @GetMapping("{id}")
+    public List<Pokemon> getPokemonById(@PathVariable(name = "id") Long id){
+        return service.getPokemonById(id);
     }
 
     @PostMapping 
