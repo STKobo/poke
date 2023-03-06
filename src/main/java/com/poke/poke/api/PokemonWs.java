@@ -37,14 +37,14 @@ public class PokemonWs {
         service.createPokemon(pokemon);
     }
 
-    @PutMapping("{name}")
-    public void updatePokemon(@PathVariable(name = "name") String nom, @RequestBody Pokemon pokemon){
-        service.updatePokemon(nom, pokemon);
+    @PutMapping("{id}")
+    public void updatePokemon(@PathVariable(name = "id") Long id, @RequestBody Pokemon pokemon){
+        service.updatePokemon(id, pokemon);
     }
 
-    @DeleteMapping("{name}")
-    public void deletePokemon(@PathVariable(name = "name") String nom){
-        service.deletePokemon(nom);
+    @DeleteMapping("{id}")
+    public void deletePokemon(@PathVariable(name = "id") Long id){
+        service.deletePokemon(id);
     }
 
 }
