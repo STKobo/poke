@@ -2,6 +2,7 @@ package com.poke.poke.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,21 +31,19 @@ public class PokemonServiceImpl implements PokemonService{
     }
 
     @Override
-    public void updatePokemon(String pokemonName, Pokemon pokemon) {
-        this.deletePokemon(pokemonName);
-        maListe.add(pokemon);
+    public void updatePokemon(Long id, Pokemon pokemon) {
+        this.deletePokemon(id);
+        pokemonRepository.save(pokemon);
     }
 
     @Override
     public void createPokemon(Pokemon pokemon) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createPokemon'");
+        pokemonRepository.save(pokemon);
     }
 
     @Override
-    public void deletePokemon(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deletePokemon'");
+    public void deletePokemon(Long id) {
+       pokemonRepository.deleteById(id);
     }
     
     

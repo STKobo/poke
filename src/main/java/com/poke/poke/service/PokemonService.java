@@ -10,9 +10,9 @@ public interface PokemonService {
 
     Pokemon getPokemonById(Long id);
 
-    void updatePokemon(String pokemonName, Pokemon pokemon);
+    void updatePokemon(Long id, Pokemon pokemon);
 
     void createPokemon(Pokemon pokemon);
 
-    void deletePokemon(String name);
+    void deletePokemon(Long id);
 }
