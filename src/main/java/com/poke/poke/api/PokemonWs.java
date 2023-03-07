@@ -3,6 +3,7 @@ package com.poke.poke.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import com.poke.poke.service.PokemonService;
 
 import io.swagger.annotations.ApiParam;
 
-@RestController
+@Controller
 @RequestMapping(ApiRegistration.REST_PREFIX + ApiRegistration.REST_POKEMON)
 public class PokemonWs {
 
@@ -26,9 +27,10 @@ public class PokemonWs {
     private PokemonService service;
 
     @GetMapping
-    public ModelAndView getAllPokemon(){
+    public ModelAndView getAllPokemon(){ 
         ModelAndView modelAndView = new ModelAndView("index.html");
         modelAndView.addObject("user", service.getAllPokemon());
+        return modelAndView;
     }
 
     @GetMapping("{id}")
