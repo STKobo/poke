@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.poke.poke.pojo.Pokemon;
 import com.poke.poke.service.PokemonService;
 
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping(ApiRegistration.REST_PREFIX + ApiRegistration.REST_POKEMON)
 public class PokemonWs {
