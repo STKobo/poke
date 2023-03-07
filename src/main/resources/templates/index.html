@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <tr data-th-each="pokemons : ${user}">
+        <td data-th-switch="${message.nom}">
+            <p data-th-case="nom">Le nom est Default</p>
+            <p data-th-case="pikachu">pikachu apprends le java</p>
+            <p data-th-case="*">Inconnu</p>
+        <td data-th-unless="${message.nom} == 'nom'">Il n'a pas de nom</td>
+        </td>
+    </tr>
 </body>
 </html>

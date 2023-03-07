@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.poke.poke.pojo.Pokemon;
 import com.poke.poke.service.PokemonService;
@@ -25,8 +26,9 @@ public class PokemonWs {
     private PokemonService service;
 
     @GetMapping
-    public List<Pokemon> getAllPokemon(){
-        return service.getAllPokemon();
+    public ModelAndView getAllPokemon(){
+        ModelAndView modelAndView = new ModelAndView("index.html");
+        modelAndView.addObject("user", service.getAllPokemon());
     }
 
     @GetMapping("{id}")
